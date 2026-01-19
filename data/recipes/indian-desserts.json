@@ -1,0 +1,31 @@
+{
+  "categoryId": "indian-desserts",
+  "recipes": [
+    {
+      "id": "khopra-pak",
+      "title": "Khopra Pak",
+      "ingredients": [
+        "Mawa (Daanedar if possible) - 200gm",
+        "Sugar - 75gm",
+        "Decicated Coconut(Khopra bura) - 40gm",
+        "Milk - 20ml (will add only if required)",
+        "Saffron - for sprinkling at top"
+      ],
+      "steps": [
+        "Heat a heavy bottom pan.",
+        "Add Mawa and sugar to it.",
+        "Mix till sugar dissolves and heat it a bit.",
+        "Add Khopra Bura towards the end and mix vigorously.",
+        "Add Milk 1-2 tsp if mixture seems too dry (it depends on quality of mawa)",
+        "Apply bit of ghee to a square dish and add mixture to it for setting in.",
+        "Once settled, sprinkle some saffron water on top for look and flavor."
+      ],
+      "tags": [
+        "khopra",
+        "barfi",
+        "khopra barfi",
+        "coconut sweet"
+      ]
+    }
+  ]
+}

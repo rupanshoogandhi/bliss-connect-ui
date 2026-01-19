@@ -1,0 +1,24 @@
+{
+  "categoryId": "indian",
+  "recipes": [
+    {
+      "id": "jeera-rice",
+      "title": "Jeera Rice",
+      "ingredients": [
+        "1 cup basmati rice",
+        "1.5 cups water",
+        "1 tbsp ghee",
+        "1 tsp cumin (jeera)",
+        "Salt"
+      ],
+      "steps": [
+        "Rinse rice and soak for 15 minutes.",
+        "Heat ghee, add cumin and let it splutter.",
+        "Add drained rice, saute 1 minute.",
+        "Add water and salt. Cook covered until done.",
+        "Fluff and serve."
+      ],
+      "tags": ["rice", "quick"]
+    }
+  ]
+}

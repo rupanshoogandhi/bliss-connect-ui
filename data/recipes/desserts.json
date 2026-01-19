@@ -1,0 +1,23 @@
+{
+  "categoryId": "desserts",
+  "recipes": [
+    {
+      "id": "kheer",
+      "title": "Rice Kheer",
+      "ingredients": [
+        "1/4 cup rice",
+        "1 liter milk",
+        "Sugar to taste",
+        "Cardamom",
+        "Nuts"
+      ],
+      "steps": [
+        "Wash rice and cook in a little water until soft.",
+        "Add milk and simmer, stirring occasionally.",
+        "Add sugar and cardamom.",
+        "Garnish with nuts and serve warm/chilled."
+      ],
+      "tags": ["sweet", "milk"]
+    }
+  ]
+}

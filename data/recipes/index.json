@@ -1,0 +1,19 @@
+{
+  "categories": [
+    {
+      "id": "indian",
+      "name": "Indian",
+      "file": "indian.json"
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts",
+      "file": "desserts.json"
+    },
+    {
+      "id": "indian-desserts",
+      "name": "Indian Desserts",
+      "file": "indian-desserts.json"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bliss Connect Recipes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src='main.js'></script>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Bliss Connect</span>
+          </a>
+          <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400\tflex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="index.html">Home</a>
+            <a class="mr-5 hover:text-gray-900" href="contactUs.html">Contact Us</a>
+            <a class="mr-5 hover:text-gray-900" href="recipes.html">Recipes</a>
+          </nav>
+        </div>
+      </header>
+@@
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-10 mx-auto">
+          <div class="flex flex-col text-center w-full mb-8">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Cooking Recipes</h1>
+          </div>
+
+          <div class="max-w-6xl mx-auto">
+            <div id="statusMsg" class="text-sm text-gray-500 mb-4"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="bg-white rounded-lg border border-gray-200 p-5">
+                <h2 class="text-lg font-medium text-gray-900 mb-3">Categories</h2>
+                <div id="categoryNav" class="space-y-2"></div>
+              </div>
+
+              <div class="bg-white rounded-lg border border-gray-200 p-5 lg:col-span-2">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <h2 id="recipesHeading" class="text-lg font-medium text-gray-900">Recipes</h2>
+                </div>
+                <div id="recipeList" class="space-y-3"></div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-gray-200 p-6 mt-6">
+              <h2 class="text-lg font-medium text-gray-900 mb-2">Recipe Details</h2>
+              <div id="recipeDetail" class="text-sm text-gray-600">Select a recipe to view details.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Bliss Connect</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 BlissConnect —
+            <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@rupanshoogandhi</a>
+          </p>
+        </div>
+      </footer>
+
+      <script>
+        (function () {
+          var INDEX_URL = 'data/recipes/index.json';
+
+          function esc(text) {
+            return String(text || '')
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#39;');
+          }
+
+          function setStatus(msg) {
+            var el = document.getElementById('statusMsg');
+            if (el) el.textContent = msg || '';
+          }
+
+          function getHashParams() {
+            var hash = (window.location.hash || '').replace(/^#/, '');
+            var parts = hash.split('&');
+            var out = {};
+            for (var i = 0; i < parts.length; i++) {
+              if (!parts[i]) continue;
+              var kv = parts[i].split('=');
+              var k = decodeURIComponent(kv[0] || '');
+              var v = decodeURIComponent(kv.slice(1).join('=') || '');
+              if (k) out[k] = v;
+            }
+            return out;
+          }
+
+          function setHashParams(params) {
+            var pairs = [];
+            for (var k in params) {
+              if (!Object.prototype.hasOwnProperty.call(params, k)) continue;
+              if (params[k] === undefined || params[k] === null || params[k] === '') continue;
+              pairs.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k]));
+            }
+            window.location.hash = pairs.join('&');
+          }
+
+          function fetchJson(url) {
+            return fetch(url, { cache: 'no-cache' }).then(function (res) {
+              if (!res.ok) throw new Error('Failed to load: ' + url);
+              return res.json();
+            });
+          }
+
+          function renderCategories(categories, selectedCategoryId) {
+            var nav = document.getElementById('categoryNav');
+            if (!nav) return;
+
+            if (!categories || categories.length === 0) {
+              nav.innerHTML = '<div class="text-sm text-gray-500">No categories found.</div>';
+              return;
+            }
+
+            var html = '';
+            for (var i = 0; i < categories.length; i++) {
+              var c = categories[i];
+              var isActive = c.id === selectedCategoryId;
+              html +=
+                '<button data-category-id="' + esc(c.id) + '" class="w-full text-left px-4 py-2 rounded border ' +
+                  (isActive ? 'border-indigo-300 bg-indigo-50 text-indigo-700' : 'border-gray-200 hover:bg-gray-50 text-gray-700') +
+                '">' + esc(c.name) + '</button>';
+            }
+
+            nav.innerHTML = html;
+
+            var buttons = nav.querySelectorAll('button[data-category-id]');
+            for (var j = 0; j < buttons.length; j++) {
+              buttons[j].addEventListener('click', function (evt) {
+                var categoryId = evt.currentTarget.getAttribute('data-category-id');
+                setHashParams({ category: categoryId, recipe: '' });
+              });
+            }
+          }
+
+          function renderRecipeList(categoryName, recipes, selectedRecipeId) {
+            var heading = document.getElementById('recipesHeading');
+            if (heading) heading.textContent = categoryName ? ('Recipes - ' + categoryName) : 'Recipes';
+
+            var list = document.getElementById('recipeList');
+            if (!list) return;
+
+            if (!recipes || recipes.length === 0) {
+              list.innerHTML = '<div class="text-sm text-gray-500">No recipes in this category.</div>';
+              return;
+            }
+
+            var html = '';
+            for (var i = 0; i < recipes.length; i++) {
+              var r = recipes[i];
+              var isActive = r.id === selectedRecipeId;
+              html +=
+                '<button data-recipe-id="' + esc(r.id) + '" class="w-full text-left p-4 rounded border ' +
+                  (isActive ? 'border-indigo-300 bg-indigo-50' : 'border-gray-200 hover:bg-gray-50') +
+                '">' +
+                  '<div class="text-gray-900 font-medium">' + esc(r.title) + '</div>' +
+                  (r.tags && r.tags.length ? '<div class="text-xs text-gray-500 mt-1">' + esc(r.tags.join(', ')) + '</div>' : '') +
+                '</button>';
+            }
+
+            list.innerHTML = html;
+
+            var buttons = list.querySelectorAll('button[data-recipe-id]');
+            for (var j = 0; j < buttons.length; j++) {
+              buttons[j].addEventListener('click', function (evt) {
+                var recipeId = evt.currentTarget.getAttribute('data-recipe-id');
+                var current = getHashParams();
+                setHashParams({ category: current.category || '', recipe: recipeId });
+              });
+            }
+          }
+
+          function renderRecipeDetail(recipe) {
+            var detail = document.getElementById('recipeDetail');
+            if (!detail) return;
+
+            if (!recipe) {
+              detail.innerHTML = 'Select a recipe to view details.';
+              return;
+            }
+
+            var ing = Array.isArray(recipe.ingredients) ? recipe.ingredients : (recipe.ingredients ? [recipe.ingredients] : []);
+            var steps = Array.isArray(recipe.steps) ? recipe.steps : (recipe.steps ? [recipe.steps] : []);
+
+            var ingHtml = ing.length
+              ? '<ul class="list-disc pl-5 space-y-1">' + ing.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'
+              : '<div class="text-sm text-gray-500">No ingredients provided.</div>';
+
+            var stepsHtml = steps.length
+              ? '<ol class="list-decimal pl-5 space-y-1">' + steps.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>'
+              : '<div class="text-sm text-gray-500">No steps provided.</div>';
+
+            detail.innerHTML =
+              '<div class="text-xl font-medium text-gray-900">' + esc(recipe.title) + '</div>' +
+              (recipe.tags && recipe.tags.length ? '<div class="text-xs text-gray-500 mt-1">Tags: ' + esc(recipe.tags.join(', ')) + '</div>' : '') +
+              '<div class="mt-4">' +
+                '<div class="text-sm font-semibold text-gray-700">Ingredients</div>' +
+                '<div class="mt-2">' + ingHtml + '</div>' +
+              '</div>' +
+              '<div class="mt-4">' +
+                '<div class="text-sm font-semibold text-gray-700">Steps</div>' +
+                '<div class="mt-2">' + stepsHtml + '</div>' +
+              '</div>';
+          }
+
+          var appState = {
+            categories: [],
+            selectedCategory: null,
+            recipes: [],
+            selectedRecipe: null
+          };
+
+          function resolveAndRenderFromHash() {
+            var params = getHashParams();
+            var categoryId = params.category || (appState.categories[0] && appState.categories[0].id) || '';
+            var selectedCategory = null;
+            for (var i = 0; i < appState.categories.length; i++) {
+              if (appState.categories[i].id === categoryId) {
+                selectedCategory = appState.categories[i];
+                break;
+              }
+            }
+
+            if (!selectedCategory && appState.categories.length) {
+              selectedCategory = appState.categories[0];
+              categoryId = selectedCategory.id;
+            }
+
+            renderCategories(appState.categories, categoryId);
+
+            if (!selectedCategory) {
+              renderRecipeList('', [], '');
+              renderRecipeDetail(null);
+              return;
+            }
+
+            setStatus('Loading category...');
+            fetchJson('data/recipes/' + selectedCategory.file).then(function (catData) {
+              appState.selectedCategory = selectedCategory;
+              appState.recipes = (catData && Array.isArray(catData.recipes)) ? catData.recipes : [];
+
+              var recipeId = (params.recipe || '');
+              renderRecipeList(selectedCategory.name, appState.recipes, recipeId);
+
+              var selectedRecipe = null;
+              for (var j = 0; j < appState.recipes.length; j++) {
+                if (appState.recipes[j].id === recipeId) {
+                  selectedRecipe = appState.recipes[j];
+                  break;
+                }
+              }
+
+              if (!selectedRecipe && appState.recipes.length) {
+                selectedRecipe = appState.recipes[0];
+                setHashParams({ category: categoryId, recipe: selectedRecipe.id });
+                return;
+              }
+
+              appState.selectedRecipe = selectedRecipe;
+              renderRecipeDetail(selectedRecipe);
+              setStatus('');
+            }).catch(function (e) {
+              setStatus('Failed to load recipes. If you are opening this file directly, use a local web server or GitHub Pages.');
+              renderRecipeList(selectedCategory.name, [], '');
+              renderRecipeDetail(null);
+            });
+          }
+
+          setStatus('Loading categories...');
+          fetchJson(INDEX_URL).then(function (idx) {
+            appState.categories = (idx && Array.isArray(idx.categories)) ? idx.categories : [];
+            setStatus('');
+            resolveAndRenderFromHash();
+          }).catch(function (e) {
+            setStatus('Failed to load categories. If you are opening this file directly, use a local web server or GitHub Pages.');
+          });
+
+          window.addEventListener('hashchange', function () {
+            resolveAndRenderFromHash();
+          });
+        })();
+      </script>
+</body>
+</html>
