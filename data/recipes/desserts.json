@@ -2,6 +2,51 @@
   "categoryId": "desserts",
   "recipes": [
     {
+      "id": "vanilla-cake-sponge",
+      "title": "Eggless Cake Sponge",
+      "ingredients": [
+        "Maida - 220 Gms",
+        "Baking powder - 2 Tsp",
+        "Baking Soda - 1/4th Tsp",
+        "White Butter (Unsalted Butter) - 135 Gms",
+        "Sugar (powdered) - 80 gms",
+        "Milkmaid - 1 Tin (400gms)",
+        "Vanilla Essence - 10-15 Drops",
+        "Milk - Fill the Milkmaid tin or 250 ml"
+      ],
+      "steps": [
+        "First pass all Dry ingredients through a sieve like Maida, Baking Powder and Baking Soda.",
+        "Kept them aside in a bowl.",
+        "Take White Butter and whisk it with powdered sugar until sugar is dissolved.",
+        "Once dissolved and butter melts add Milkmaid.",
+        "Mix all wet ingredients.",
+        "Add Vanilla Essence to wet ingredients.",
+        "Now comes the important step.",
+        "Line your cake tin (you will get two cakes with above recipe).",
+        "Line it with butter paper or ghee + maida combo.",
+        "Start Oven to pre heat at 180 Degrees.",
+        "Next we need to fold Dry ingredients into wet ingredients bowl.",
+        "By folding I mean mix slowly in only One Direction.",
+        "Keep hollow part of spoon always facing the direction.",
+        "Add Dry ingredients a Tsp at a time and fold then next tsp.",
+        "Once you feel mixture is harder to mix add Milk (in parts).",
+        "Continue to add All Dry ingredients to wet mix bowl.",
+        "By the end of the process you should have-",
+        "An airy mixture with Besan chilla like consistency or bit stiffer.",
+        "Pour mixture in cake tins (Only half way).",
+        "Bake in Center for 35 to 40 mins.",
+        "Once baked (check with knife).",
+        "Take it out, let it cool a bit and then remove from Cake tin.",
+        "Eat piping hot!!"
+      ],
+      "tags": [
+        "Cake",
+        "Sponge",
+        "Vanilla",
+        "Eggless"
+      ]
+    },
+    {
       "id": "kheer",
       "title": "Rice Kheer",
       "ingredients": [
@@ -17,7 +62,10 @@
         "Add sugar and cardamom.",
         "Garnish with nuts and serve warm/chilled."
       ],
-      "tags": ["sweet", "milk"]
+      "tags": [
+        "sweet",
+        "milk"
+      ]
     }
   ]
 }
