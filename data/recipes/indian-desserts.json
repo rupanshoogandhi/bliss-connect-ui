@@ -2,6 +2,30 @@
   "categoryId": "indian-desserts",
   "recipes": [
     {
+      "id": "shrikhand",
+      "title": "Shrikhand",
+      "ingredients": [
+        "Liquid Chakka - 1 KG",
+        "Sugar - 850 gms",
+        "Kesar - few petals",
+        "Edible Gulab Jal - 1/2 Tsp",
+        "Nutmeg - a pinch (Optional)"
+      ],
+      "steps": [
+        "Process is very important for Shrikhand",
+        "Start with adding all sugar to Chakka, mix and keep it aside for 8 hours",
+        "Mix every few hours motive is that sugar should get dissolved",
+        "Once all sugar is dissolved take a muslin cloth or maida sieve",
+        "Which means Latthe ka kapda ya Maide ki Chalni (Stainless Steel)",
+        "Tie it on top of bowl or keep chalni on top of bowl",
+        "Add small mix to top and strain using silicon spatula (easier with spatula)",
+        "Once all mixture passes through, add kesar, Gulab jal and nutmeg"
+      ],
+      "tags": [
+        "Shrikhand"
+      ]
+    },
+    {
       "id": "khopra-pak",
       "title": "Khopra Pak",
       "ingredients": [
