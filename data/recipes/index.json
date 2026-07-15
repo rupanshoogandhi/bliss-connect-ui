@@ -14,6 +14,11 @@
       "id": "indian-desserts",
       "name": "Indian Desserts",
       "file": "indian-desserts.json"
+    },
+    {
+      "id": "indian-snacks",
+      "name": "Indian Snacks",
+      "file": "indian-snacks.json"
     }
   ]
 }
