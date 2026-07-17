@@ -1,4 +1,40 @@
 {
   "categoryId": "indian-snacks",
-  "recipes": []
+  "recipes": [
+    {
+      "id": "khaman",
+      "title": "Khaman / Dhokla",
+      "ingredients": [
+        "Gram flour - 220gms",
+        "Citric acid - 1 Tsp",
+        "Sugar - 3 Tbsp",
+        "Water - 250 gms",
+        "Baking soda - 1 Tsp",
+        "Salt to taste",
+        "Coriander - For Garnish",
+        "Green Chillies - For Tadka",
+        "Mustard seeds - For Tadka",
+        "Curry Leaves - For Tadka",
+        "Lemon Juice - For Garnish"
+      ],
+      "steps": [
+        "Take big bowl and pass Gram Flour from sieve.",
+        "Add Salt, Sugar and Citric Acid, mix well.",
+        "Then add water small amount at a time and mix with whisk to avoid lumps",
+        "you will get a thick batter.",
+        "Now get the steamer ready and grease your pan",
+        "Now at end add baking soda + small amount of water and mix briskly",
+        "You will see batter double up due to bubbles and reaction between acid and base.",
+        "Pour it in steaming pan and cook it for 20 mins",
+        "Once cooked, take it out of pan and let it cool",
+        "Make your tadka and add 1 cup water to it. Heat it and pour on top of khaman and Enjoy"
+      ],
+      "tags": [
+        "Khaman",
+        "dhokla",
+        "mirchi",
+        "gujrati"
+      ]
+    }
+  ]
 }
