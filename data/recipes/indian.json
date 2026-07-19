@@ -19,6 +19,48 @@
         "Fluff and serve."
       ],
       "tags": ["rice", "quick"]
+    },
+    {
+      "id": "kadai-paneer",
+      "title": "Kadai Paneer",
+      "ingredients": [
+        "100 Gms Finely chopped Onions and 50 Gms Diced sliced Onions",
+        "150 Gms Finely chopped and skin peeled Tomatoes, 50 Gms Diced and sliced Tomatoes",
+        "100 Gms Diced and sliced Green Capsicum",
+        "3-4 Garlic cloves finely chopped",
+        "50 Gms Cashew Nuts",
+        "100 Gms Cottage Cheese (Paneer) diced into pieces",
+        "3-4 Dried Red Chillies",
+        "1 Tsp Fennel Seeds",
+        "Dried Coriander Seeds",
+        "8-10 Peppercorns and 2 Cloves",
+        "1 Tsp Cumin Seeds",
+        "1 Tbsp Dried Fenugreek Leaves (Kasuri Methi)",
+        "Vegetable Oil",
+        "2 Nos Indian Bay Leaves",
+        "1 1/2 Tsp Red Chilli Powder",
+        "Salt to taste",
+        "1/2 Tsp Turmeric Powder",
+        "1/2 Tsp Garam Masala",
+        "Powdered Roasted Cumin Seeds"
+      ],
+      "steps": [
+        "Mix Masala: Dry roast 1/2 Tsp cumin seeds, 8-10 peppercorns, 2 cloves, 1 Tsp dried coriander seeds, 1/2 Tsp fennel seeds and 3-4 dried red chillies. Roast them and crush in a mixer.",
+        "Dry roast 1 Tbsp dried fenugreek leaves and keep aside for cooling.",
+        "Add salt and some red chilli to cottage cheese. Roast green capsicum in a Tsp of vegetable oil. In the same pan, roast diced onions. Then take 1 Tsp vegetable oil and roast cashew nuts. Roast diced tomatoes. Finally, shallow fry cottage cheese.",
+        "For Gravy: Take 2 Tbsp oil, add cumin seeds till they crackle. Add garlic, ginger and green chillies to pan and mix. Add finely chopped onions, once cooked add finely chopped tomatoes and stir. Add roasted cashew nuts, cool the mix and make a fine paste using mixer grinder.",
+        "For Sabji: Take 3 Tbsp oil in a pan, add bay leaves and cumin seeds. Once seeds crackle, add the gravy paste. Stir and cook till it leaves the sides. Add 1/2 Tsp turmeric powder, 1 1/2 Tsp chilli powder, 1/2 Tsp roasted cumin seed powder, 1 Tsp mix masala and salt to taste.",
+        "Add roasted green capsicum dices, onion and cottage cheese. Add kasuri methi at end. Add some water and cook covered for 5 mins. Your Kadai Paneer is ready!"
+      ],
+      "videoUrl": "https://www.youtube.com/embed/P0J0ohegY9Y",
+      "tags": [
+        "paneer",
+        "kadai",
+        "gravy",
+        "sabji",
+        "vegetarian",
+        "spicy"
+      ]
     }
   ]
 }
