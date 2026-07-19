@@ -1,4 +1,39 @@
 {
   "categoryId": "bakery",
-  "recipes": []
+  "recipes": [
+    {
+      "id": "wheat-milk-bread",
+      "title": "Wheat Milk Bread",
+      "ingredients": [
+        "3-4 g Yeast",
+        "175 g Wheat Flour",
+        "75 g Maida (All Purpose Flour)",
+        "1.5 tbsp Sugar",
+        "1 tsp Salt",
+        "100 ml Water",
+        "100 ml Milk"
+      ],
+      "steps": [
+        "Mix the yeast with lukewarm water and a little sugar. Let it rest for 5-10 minutes until frothy.",
+        "In a large bowl, combine wheat flour, maida, sugar, and salt.",
+        "Add the activated yeast mixture and milk to the flour.",
+        "Mix and knead into a smooth, soft dough for 10-12 minutes.",
+        "Cover the dough and let it rise until doubled in size (about 1 hour).",
+        "Punch down the dough and shape it into a loaf.",
+        "Place the loaf in a greased bread tin.",
+        "Allow it to proof again for 30-45 minutes until it rises above the tin.",
+        "Preheat the oven to 180°C.",
+        "Bake for 30-35 minutes until the top is golden brown.",
+        "Remove from the tin and cool completely before slicing."
+      ],
+      "tags": [
+        "bread",
+        "wheat",
+        "maida",
+        "baking",
+        "breakfast",
+        "vegetarian"
+      ]
+    }
+  ]
 }
