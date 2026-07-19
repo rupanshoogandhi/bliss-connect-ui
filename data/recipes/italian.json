@@ -1,0 +1,45 @@
+{
+  "categoryId": "italian",
+  "recipes": [
+    {
+      "id": "white-sauce-pasta",
+      "title": "White Sauce Pasta | Penne Pasta | Baked White Sauce Pasta",
+      "ingredients": [
+        "100 Gms Penne Pasta",
+        "2 Tbsp Maida/All Purpose Flour",
+        "2 Tbsp Salted Butter for Sauteing veggies",
+        "Salt to taste",
+        "2 Tbsp Salted Butter for White Sauce",
+        "30 Gm Processed Cheese",
+        "50 Gm Mozzarella Cheese",
+        "25 Gm Yellow Capsicum",
+        "25 Gm Red Capsicum",
+        "25 Gm Green Capsicum",
+        "30 Gm Broccoli",
+        "4 Pieces Baby Corn, cut into small pieces",
+        "1 Tsp White Pepper Powder",
+        "1 Tsp Oregano Powder",
+        "1 Tsp Chilli Flakes",
+        "500 ML Milk",
+        "2 Cloves of finely chopped Garlic"
+      ],
+      "steps": [
+        "For Pasta: Take 3 cups water in a pan and bring it to boil. Once boiling, add Penne to it and add salt as per taste and a little amount of olive oil so that Penne does not stick to each other. After boiling for 10~15 mins, drain excess water and shower it with cold water to stop internal cooking. Keep aside by applying some oil on it.",
+        "For Sauteing Veggies: In a pan add 2 Tbsp butter, once heated add baby corn to pan and cook for around 5 mins. Now add all kinds of capsicum and blanched broccoli. Season it with some salt, chilli flakes and some oregano.",
+        "For White Sauce: Heat 2 Tbsp butter in a pan, once hot add garlic to it. Once garlic cooks add 2 Tbsp all purpose flour and stir continuously. Once cooked add 500 ML milk in parts so that no lumps are formed. Cook for around 10 mins. Once cooked, season it with salt, oregano, white pepper powder and some chilli flakes.",
+        "Final Preparation: Add sauteed veggies to sauce and then add boiled pasta to sauce. Give it a gentle stir. Your white sauce pasta is ready.",
+        "For baked version: Add sliced Mozzarella cheese on top and bake the dish for 10 mins at 180°C. Your cheesy creamy baked pasta is now ready."
+      ],
+      "videoUrl": "https://www.youtube.com/embed/2VvJj9iUVNc",
+      "tags": [
+        "pasta",
+        "white sauce",
+        "penne",
+        "baked",
+        "cheese",
+        "italian",
+        "vegetarian"
+      ]
+    }
+  ]
+}

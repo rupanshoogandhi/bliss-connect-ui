@@ -24,6 +24,11 @@
       "id": "bakery",
       "name": "Bakery",
       "file": "Bakery.json"
+    },
+    {
+      "id": "italian",
+      "name": "Italian",
+      "file": "italian.json"
     }
   ]
 }
